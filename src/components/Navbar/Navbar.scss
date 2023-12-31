@@ -1,0 +1,35 @@
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/font' as *;
+
+.Navbar {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 4px 5px -5px rgba(0,0,0,.23);
+    &-logo {
+        width: 9rem;
+        height: auto;
+    }
+    &--container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0 1rem;
+        height: 9rem;
+    }
+    &-menu {
+        display: flex;
+        gap: 2rem;
+        &--cartIcon {
+            width: 25px;
+            height: auto;
+        }
+    }
+    &-links {
+        display: none;
+        @include tablet {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+}
