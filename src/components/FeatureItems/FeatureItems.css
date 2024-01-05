@@ -1,0 +1,26 @@
+.homepage-items--card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media screen and (min-width: 600px) {
+  .homepage-items--card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .homepage-items--card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.homepage-items--card-item {
+  border: 1px solid #5c667e;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.homepage-items--card-item img {
+  width: 100%;
+}
+.homepage-items--card-text {
+  padding: 1rem;
+}/*# sourceMappingURL=FeatureItems.css.map */

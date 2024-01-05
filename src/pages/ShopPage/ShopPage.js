@@ -3,7 +3,9 @@ import '../ShopPage/ShopPage.scss';
 
 const ShopPage = () => {
   return (
-    <div>ShopPage</div>
+    <div className='shopPage-container'>
+      ShopPage
+    </div>
   )
 }
 

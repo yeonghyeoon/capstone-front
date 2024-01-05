@@ -26,10 +26,11 @@ const Navbar = () => {
                 <NavLink to='/shop'><span>Shop</span></NavLink>
                 <NavLink to='/about'><span>About</span></NavLink>
                 <NavLink to='/contact'><span>Contact</span></NavLink>
-
+                <img className="Navbar-menu--cartIcon-largeScreen" src={cartIcon} alt="cart-icon" />
             </div>
+
             <div className='Navbar-menu'>
-                <img className="Navbar-menu--cartIcon" src={cartIcon} alt="cart-icon" />
+                <img className="Navbar-menu--cartIcon-smallScreen" src={cartIcon} alt="cart-icon" />
                 <Menu>
                     <MenuButton
                         as={IconButton}

@@ -1,10 +1,63 @@
 import React from 'react'
 import '../Homepage/Homepage.scss';
+import hero from '../../assets/Images/hero1.jpeg';
+import homeDecor from '../../assets/Images/HomeDecor.jpeg';
+import kitchen from '../../assets/Images/Kitchen.jpeg';
+import lights from '../../assets/Images/Lights.jpeg';
+import furniture from '../../assets/Images/Furniture.jpeg';
+import FeatureItems from '../../components/FeatureItems/FeatureItems';
 
 const Homepage = () => {
   return (
     <div className='homepage-container'>
-      Homepage
+      <div className='homepage-hero'>
+        <div className='homepage-hero-overlay'></div>
+
+        <img className='homepage-hero-img' src={hero} alt='homeDecorImage'/>
+
+        <div className='homepage-hero-contents'>  
+          <p className='homepage-hero__header-text'>Elevate Your Space with Unique Finds</p>
+          <p className='homepage-hero__subheader-text'>Easy,fun shopping</p>
+          <button className='homepage-hero__btn'>Shop Now</button>   
+        </div>  
+      </div>
+
+      <div className='homepage-sorts'>
+        <div className='homepage-sorts--grid'>
+          <div className='homepage-sorts--grid-one'> {/** HomeDecor */}
+            <div className='homepage-sorts--grid-overlay'></div>
+            <img className='' src={homeDecor} alt="homeDecor" />
+            <p className='homepage-sorts--grid-name'>HomeDecor</p>
+          </div>
+          <div className='homepage-sorts--grid-two'> {/** Kitchen */}
+            <div className='homepage-sorts--grid-overlay'></div>
+            <img className='' src={kitchen} alt="kitchen" />
+            <p className='homepage-sorts--grid-name'>Kitchen</p>
+          </div>
+          <div className='homepage-sorts--grid-three'> {/** Lights */}
+            <div className='homepage-sorts--grid-overlay'></div>
+            <img className='' src={lights} alt="lights" />
+            <p className='homepage-sorts--grid-name'>Lights</p>
+          </div>
+          <div className='homepage-sorts--grid-four'> {/** Furniture */}
+            <div className='homepage-sorts--grid-overlay'></div>
+            <img className='' src={furniture} alt="furniture" />
+            <p className='homepage-sorts--grid-name'>Furniture</p>
+          </div>
+        </div>
+      </div>
+
+      <div className='homepage-items'>
+        <h2 className='homepage-items-head'>Featured Items</h2>
+        
+        <FeatureItems />
+
+        {/** Mapping get card data from api. not all the products just some of them ex)item.name, item.price, item.image */}
+        {/* <div className='homepage-items--card'>   */}
+          
+        {/* </div> */}
+      </div>
+
     </div>
   )
 }

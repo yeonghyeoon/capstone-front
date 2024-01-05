@@ -5,6 +5,7 @@ import Homepage from "../src/pages/Homepage/Homepage";
 import ShopPage from './pages/ShopPage/ShopPage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import ContactPage from './pages/ContactPage/ContactPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/contact' element={<ContactPage/>}></Route>
           <Route path='*' element={<Homepage/>}></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
       
     </div>

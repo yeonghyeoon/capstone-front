@@ -3,7 +3,9 @@ import '../AboutPage/AboutPage.scss';
 
 const AboutPage = () => {
   return (
-    <div>AboutPage</div>
+    <div className='aboutPage-container'>
+      AboutPage
+    </div>
   )
 }
 

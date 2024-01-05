@@ -5,6 +5,8 @@
     position: fixed;
     width: 100%;
     box-shadow: 0 4px 5px -5px rgba(0,0,0,.23);
+    background-color: #ffffff;
+    z-index: 100;
     &-logo {
         width: 9rem;
         height: auto;
@@ -21,8 +23,26 @@
         display: flex;
         gap: 2rem;
         &--cartIcon {
-            width: 25px;
-            height: auto;
+            // width: 25px;
+            // height: auto;
+            &-smallScreen {
+                width: 25px;
+                height: auto;
+                @include tablet {
+                    display: none;
+                }
+            }
+            &-largeScreen {
+                width: 25px;
+                height: auto;
+                display: none;
+                @include tablet {
+                    display: block;
+                }
+            }
+        }
+        @include tablet {
+            display: none;
         }
     }
     &-links {

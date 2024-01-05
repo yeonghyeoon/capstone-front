@@ -1,0 +1,30 @@
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/font' as *;
+@use "../../styles/partials/variables" as *;
+// @use "../../styles/partials/typography" as *;
+
+.homepage-items--card {
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        @include tablet {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include desktop {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    &-item {
+        border: 1px solid $slate;
+        border-radius: 8px;
+        overflow: hidden;
+        & img {
+            width: 100%;
+        }
+    }
+    &-text {
+        // margin: 0.5rem 0;
+        padding: 1rem;
+    }
+}

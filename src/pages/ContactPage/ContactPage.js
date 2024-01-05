@@ -3,7 +3,9 @@ import '../ContactPage/ContactPage.scss';
 
 const ContactPage = () => {
   return (
-    <div>ContactPage</div>
+    <div className='contactPage-container'>
+      ContactPage
+    </div>
   )
 }
 

@@ -2,6 +2,8 @@
   position: fixed;
   width: 100%;
   box-shadow: 0 4px 5px -5px rgba(0, 0, 0, 0.23);
+  background-color: #ffffff;
+  z-index: 100;
 }
 .Navbar-logo {
   width: 9rem;
@@ -19,14 +21,34 @@
   display: flex;
   gap: 2rem;
 }
-.Navbar-menu--cartIcon {
+.Navbar-menu--cartIcon-smallScreen {
   width: 25px;
   height: auto;
+}
+@media screen and (min-width: 600px) {
+  .Navbar-menu--cartIcon-smallScreen {
+    display: none;
+  }
+}
+.Navbar-menu--cartIcon-largeScreen {
+  width: 25px;
+  height: auto;
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  .Navbar-menu--cartIcon-largeScreen {
+    display: block;
+  }
+}
+@media screen and (min-width: 600px) {
+  .Navbar-menu {
+    display: none;
+  }
 }
 .Navbar-links {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .Navbar-links {
     display: flex;
     gap: 2rem;
