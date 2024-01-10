@@ -69,6 +69,11 @@
 .homepage-sorts {
   padding: 2rem 1rem 0 1rem;
 }
+@media screen and (min-width: 600px) {
+  .homepage-sorts {
+    padding: 4rem;
+  }
+}
 .homepage-sorts img {
   width: 100%;
   height: 100%;
@@ -80,6 +85,11 @@
   gap: 0.5rem;
   grid-template-areas: "one two" "three four";
 }
+@media screen and (min-width: 600px) {
+  .homepage-sorts--grid {
+    gap: 1rem;
+  }
+}
 .homepage-sorts--grid-one, .homepage-sorts--grid-two, .homepage-sorts--grid-three, .homepage-sorts--grid-four {
   position: relative;
   height: 16rem;
@@ -87,6 +97,11 @@
 @media screen and (min-width: 600px) {
   .homepage-sorts--grid-one, .homepage-sorts--grid-two, .homepage-sorts--grid-three, .homepage-sorts--grid-four {
     height: 15rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .homepage-sorts--grid-one, .homepage-sorts--grid-two, .homepage-sorts--grid-three, .homepage-sorts--grid-four {
+    height: 18rem;
   }
 }
 .homepage-sorts--grid-overlay {
@@ -109,8 +124,25 @@
 .homepage-items {
   padding: 2rem 1rem 0 1rem;
 }
+@media screen and (min-width: 600px) {
+  .homepage-items {
+    padding: 0 4rem;
+  }
+}
 .homepage-items-head {
   font-size: 2rem;
   font-weight: 600;
   padding-bottom: 1rem;
+}
+.homepage-about-section {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  line-height: 1.5rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 600px) {
+  .homepage-about-section {
+    width: 60%;
+    padding: 4rem 1rem 2rem 1rem;
+  }
 }/*# sourceMappingURL=Homepage.css.map */

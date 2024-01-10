@@ -6,6 +6,7 @@ import kitchen from '../../assets/Images/Kitchen.jpeg';
 import lights from '../../assets/Images/Lights.jpeg';
 import furniture from '../../assets/Images/Furniture.jpeg';
 import FeatureItems from '../../components/FeatureItems/FeatureItems';
+import About from '../../components/About/About';
 
 const Homepage = () => {
   return (
@@ -57,7 +58,10 @@ const Homepage = () => {
           
         {/* </div> */}
       </div>
-
+      <div id='about' className='homepage-about-section'>
+        <About />  
+      </div>
+        
     </div>
   )
 }

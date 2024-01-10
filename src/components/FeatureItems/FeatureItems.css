@@ -1,3 +1,11 @@
+.homepage-items--card {
+  padding-top: 1rem;
+}
+@media screen and (min-width: 600px) {
+  .homepage-items--card {
+    padding-top: 2rem;
+  }
+}
 .homepage-items--card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -14,13 +22,31 @@
   }
 }
 .homepage-items--card-item {
-  border: 1px solid #5c667e;
   border-radius: 8px;
   overflow: hidden;
 }
 .homepage-items--card-item img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  z-index: 2;
 }
 .homepage-items--card-text {
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 1rem;
+}
+.homepage-items--card-container {
+  background-color: #f5f5f5;
+  position: relative;
+  z-index: 1;
+}
+.homepage-items--card-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }/*# sourceMappingURL=FeatureItems.css.map */

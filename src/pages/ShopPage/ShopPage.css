@@ -1,3 +1,40 @@
 .shopPage-container {
   padding-top: 9rem;
+}
+.shopPage-header__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2rem 1rem;
+}
+.shopPage-header__title h2 {
+  margin: 0 auto;
+}
+.shopPage-header__btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.shopPage-header__btn button {
+  background-color: #ff6600;
+  color: #ffffff;
+}
+.shopPage-filter-none {
+  display: none;
+}
+.shopPage-item--grid {
+  grid-template-columns: 1fr;
+  padding-top: 3rem;
+}
+.shopPage-items {
+  width: 60%;
+  margin: 0 auto;
+}
+.shopPage-items img {
+  width: 100%;
 }/*# sourceMappingURL=ShopPage.css.map */

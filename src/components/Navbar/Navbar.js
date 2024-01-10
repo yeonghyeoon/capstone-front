@@ -1,6 +1,6 @@
 import React from 'react'
 import "../Navbar/Navbar.scss";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/Logo/Logo for capstone.jpg'
 import cartIcon from '../../assets/Icons/shopping-cart.png'
 import { IconButton,} from '@chakra-ui/react'
@@ -17,6 +17,11 @@ import {
   } from '@chakra-ui/react'
 
 const Navbar = () => {
+    const navigate = useNavigate();
+
+    const clickAboutHandler = () => {
+        navigate('/#about')
+    }
   return (
     <div className='Navbar'>
         <div className='Navbar--container'>
@@ -24,13 +29,21 @@ const Navbar = () => {
             <div className='Navbar-links'>
                 <NavLink to='/'><span>Home</span></NavLink>
                 <NavLink to='/shop'><span>Shop</span></NavLink>
-                <NavLink to='/about'><span>About</span></NavLink>
+                <span onClick={clickAboutHandler}>About</span>
                 <NavLink to='/contact'><span>Contact</span></NavLink>
-                <img className="Navbar-menu--cartIcon-largeScreen" src={cartIcon} alt="cart-icon" />
+                <div className='Navbar-menu--cartIcon-wrapper'>
+                    <img className="Navbar-menu--cartIcon-largeScreen" src={cartIcon} alt="cart-icon" /> 
+                    <span>0</span>   
+                </div>
+               
             </div>
 
             <div className='Navbar-menu'>
-                <img className="Navbar-menu--cartIcon-smallScreen" src={cartIcon} alt="cart-icon" />
+                <div className='Navbar-menu--cartIcon-wrapper'>
+                    <img className="Navbar-menu--cartIcon-smallScreen" src={cartIcon} alt="cart-icon" />    
+                    <span>0</span>
+                </div>
+                
                 <Menu>
                     <MenuButton
                         as={IconButton}
@@ -41,18 +54,18 @@ const Navbar = () => {
                         height="auto"
                     />
                     <MenuList>
-                        <MenuItem command='⌘T'>
+                    <NavLink to='/'><MenuItem command='⌘T'>
                         Home
-                        </MenuItem>
-                        <MenuItem command='⌘N'>
+                        </MenuItem></NavLink>
+                    <NavLink to='/shop'><MenuItem command='⌘N'>
                         Shop
-                        </MenuItem>
-                        <MenuItem command='⌘⇧N'>
+                        </MenuItem></NavLink>
+                    <NavLink to='/about'><MenuItem command='⌘⇧N'>
                         About
-                        </MenuItem>
-                        <MenuItem command='⌘O'>
+                        </MenuItem></NavLink>
+                    <NavLink to='/contact'><MenuItem command='⌘O'>
                         Contact
-                        </MenuItem>
+                        </MenuItem></NavLink>
                     </MenuList>
                 </Menu>
             </div>
