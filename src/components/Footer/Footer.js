@@ -3,6 +3,7 @@ import '../Footer/Footer.scss';
 import facebook from '../../assets/Icons/Icon-facebook.svg';
 import instagram from '../../assets/Icons/Icon-instagram.svg';
 import xLogo from '../../assets/Icons/x-social-media-logo-icon.webp';
+// import xLogo from '../../assets/Icons/x-logo.svg';
 
 const Footer = () => {
   return (

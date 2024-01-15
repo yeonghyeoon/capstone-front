@@ -1,0 +1,36 @@
+.furniture-items {
+  width: 60%;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+@media screen and (min-width: 600px) {
+  .furniture-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+.furniture-items--card {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.furniture-items--card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px 4px 0 0;
+}
+.furniture-items--card-text {
+  padding: 1rem;
+  text-align: center;
+}
+.furniture-items--card-text--name {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.furniture-items--card-text--price {
+  font-weight: 600;
+}/*# sourceMappingURL=Furniture.css.map */

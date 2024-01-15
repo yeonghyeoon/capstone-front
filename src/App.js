@@ -8,10 +8,11 @@ import ContactPage from './pages/ContactPage/ContactPage';
 import Footer from './components/Footer/Footer';
 import theme from './components/theme';
 import { ChakraProvider } from '@chakra-ui/react';
-import Lights from './components/Shop/Lights';
-import Furniture from './components/Shop/Furniture';
-import HomeDecor from './components/Shop/HomeDecor';
-import Kitchen from './components/Shop/Kitchen';
+import Lights from './components/Shop-Category/Lights';
+import Furniture from './components/Shop-Category/Furniture';
+import HomeDecor from './components/Shop-Category/HomeDecor';
+import Kitchen from './components/Shop-Category/Kitchen';
+import SingleItem from './pages/SingleItem/SingleItem';
 
 function App() {
   return (
@@ -21,15 +22,15 @@ function App() {
           <Navbar/>
           <Routes>
             <Route path='/' element={<Homepage />}></Route>
-            <Route path='/shop' element={<ShopPage/>}>
-              <Route path='/shop/Lights' element={<Lights/>}></Route>
-              <Route path='/shop/Furniture' element={<Furniture/>}></Route>
-              <Route path='/shop/HomeDecor' element={<HomeDecor/>}></Route>
-              <Route path='/shop/Kitchen' element={<Kitchen/>}></Route>
+            <Route path='/products' element={<ShopPage/>}>
+              <Route path='/products/Lights' element={<Lights/>}></Route>
+              <Route path='/products/Furniture' element={<Furniture/>}></Route>
+              <Route path='/products/HomeDecor' element={<HomeDecor/>}></Route>
+              <Route path='/products/Kitchen' element={<Kitchen/>}></Route>
+              
             </Route>
-            {/* <Route path='shop/product/:id' element={</>}></Route> */}
-
-            <Route path='/about' element={<AboutPage/>}></Route>
+            <Route path='/products/:id' element={<SingleItem/>}></Route>
+            <Route path='/about' element={<AboutPage/>}></Route>  
             <Route path='/contact' element={<ContactPage/>}></Route>
             <Route path='*' element={<Homepage/>}></Route>
           </Routes>

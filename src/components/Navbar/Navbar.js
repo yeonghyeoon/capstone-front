@@ -20,7 +20,7 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const clickAboutHandler = () => {
-        navigate('/#about')
+        navigate('/about')
     }
   return (
     <div className='Navbar'>
@@ -28,7 +28,7 @@ const Navbar = () => {
             <NavLink to='/'><img className='Navbar-logo' src={Logo} alt="elevate logo"/></NavLink>
             <div className='Navbar-links'>
                 <NavLink to='/'><span>Home</span></NavLink>
-                <NavLink to='/shop'><span>Shop</span></NavLink>
+                <NavLink to='/products'><span>Shop</span></NavLink>
                 <span onClick={clickAboutHandler}>About</span>
                 <NavLink to='/contact'><span>Contact</span></NavLink>
                 <div className='Navbar-menu--cartIcon-wrapper'>
@@ -57,7 +57,7 @@ const Navbar = () => {
                     <NavLink to='/'><MenuItem command='⌘T'>
                         Home
                         </MenuItem></NavLink>
-                    <NavLink to='/shop'><MenuItem command='⌘N'>
+                    <NavLink to='/products'><MenuItem command='⌘N'>
                         Shop
                         </MenuItem></NavLink>
                     <NavLink to='/about'><MenuItem command='⌘⇧N'>
