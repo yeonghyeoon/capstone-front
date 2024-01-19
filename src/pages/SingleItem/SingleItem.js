@@ -10,7 +10,7 @@ const SingleItem = () => {
     const URL = process.env.REACT_APP_API_URL;
     console.log("Rendering SingleItem component")
     const [singleItem, setSingleItem] = useState([]);
-    const [quantity, setQuantity] = useState("1");
+    const [quantity, setQuantity] = useState(1);
     
     useEffect(() => {
         console.log("Id", id);
@@ -23,6 +23,18 @@ const SingleItem = () => {
                 console.log("Error",error)
             })
     }, [id])
+
+    const increase = () => {
+        console.log("quantity increased")
+        setQuantity(quantity+1);
+    }
+    const decrease = () => {
+        console.log("quantity decreased")
+        if (quantity >1) {
+            setQuantity(quantity-1);
+        }
+
+    }
 
   return (
     <div className='singleItem'>
@@ -39,25 +51,25 @@ const SingleItem = () => {
         <div className='singleItem-info'>
             {/** 설명 Lorem ipsum... */}
             <div className='singleItem-info--text'>
-                <LoremIpsum p={1} avgWordsPerSentence={2}/>    
+                <LoremIpsum p={1} avgWordsPerSentence={3}/>    
             </div>
             <div className='singleItem-quantity'>
                 <p>Quantity</p>
                 <div className='singleItem-quantity--btn'>
-                    <button>-</button>
+                    <button onClick={decrease}>-</button>
                     <p>{quantity}</p>
-                    <button>+</button>    
+                    <button onClick={increase}>+</button>    
                 </div>
                 <p className='singleItem-info--price'>${singleItem.price}</p>    
             </div>
         
             <div className='singleItem-info--btn'>
-                <Button colorScheme='messenger' size='lg' className=''>ADD TO CART</Button>
-                <Button colorScheme='messenger' size='lg' className=''>BUY NOW</Button>    
+                <Button colorScheme='messenger' size='lg' className='singleItem-info--btn--add'>ADD TO CART</Button>
+                <Button colorScheme='messenger' size='lg' className='singleItem-info--btn--buy'>BUY NOW</Button>    
             </div>
             
         </div>
-        <div className=''>
+        <div className='singleItem-info--detail'>
             <div className='singleItem-description'>
                 <div className='singleItem-size'>{singleItem.size}</div>
                 <div className='singleItem-weight'>{singleItem.weight}</div>

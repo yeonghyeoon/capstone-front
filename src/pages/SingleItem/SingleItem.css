@@ -25,21 +25,46 @@
   box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.18);
 }
 .singleItem-info {
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
+  background-color: #f4f4f4;
+  margin-top: 2rem;
 }
 .singleItem-info--btn {
   gap: 2rem;
+  display: flex;
+  width: 100%;
+}
+.singleItem-info--btn--add {
+  width: 50%;
+}
+.singleItem-info--btn--buy {
+  width: 50%;
 }
 .singleItem-info--text {
   font-size: 1.25rem;
   font-weight: 400;
   padding-bottom: 3rem;
 }
+.singleItem-info--detail {
+  background-color: #f4f4f4;
+  margin-top: 3rem;
+}
 .singleItem-quantity {
   display: flex;
   justify-content: space-between;
   padding-bottom: 2rem;
 }
+.singleItem-quantity button {
+  background-color: #ffffff;
+  width: 40px;
+  height: 40px;
+}
 .singleItem-quantity--btn {
   display: flex;
+}
+.singleItem-quantity--btn p {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=SingleItem.css.map */

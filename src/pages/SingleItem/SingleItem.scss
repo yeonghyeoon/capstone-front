@@ -29,14 +29,29 @@
         }
     }
     &-info {
-        padding: 4rem 1rem;
+        padding: 3rem 1rem;
+        background-color: #f4f4f4;
+        margin-top: 2rem;
+        // background-color: #e0e0e0;
         &--btn {
             gap: 2rem;
+            display: flex;
+            width: 100%;
+            &--add {
+                width: 50%;
+            }
+            &--buy {
+                width: 50%;
+            }
         }
         &--text {
             font-size: 1.25rem;
             font-weight: 400;
             padding-bottom: 3rem;
+        }
+        &--detail {
+            background-color: #f4f4f4;
+            margin-top: 3rem;
         }
         
     }
@@ -44,9 +59,19 @@
         display: flex;
         justify-content: space-between;
         padding-bottom: 2rem;
-        
+        & button {
+            background-color: #ffffff;
+            width: 40px;
+            height: 40px;
+        }
         &--btn {
             display: flex;
+            & p {
+                width: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 }
