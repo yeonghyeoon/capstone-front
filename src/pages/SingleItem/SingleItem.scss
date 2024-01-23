@@ -53,6 +53,16 @@
             background-color: #f4f4f4;
             margin-top: 3rem;
         }
+        &--reviews {
+            &-icons {
+                display: flex;
+                gap: 0.5rem;
+            }
+            &--Detail {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
         
     }
     &-quantity {

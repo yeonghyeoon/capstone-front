@@ -49,6 +49,14 @@
   background-color: #f4f4f4;
   margin-top: 3rem;
 }
+.singleItem-info--reviews-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+.singleItem-info--reviews--Detail {
+  display: flex;
+  justify-content: space-between;
+}
 .singleItem-quantity {
   display: flex;
   justify-content: space-between;

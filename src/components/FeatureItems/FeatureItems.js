@@ -2,6 +2,7 @@ import React from 'react'
 import '../FeatureItems/FeatureItems.scss';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
+import { NavLink} from 'react-router-dom';
 import { Box } from "@chakra-ui/react"
 
 const FeatureItems = () => {
@@ -31,7 +32,7 @@ const FeatureItems = () => {
     <div className='homepage-items--card'>
         <div className='homepage-items--card-grid'>
             {filteredItems.map((item) => (
-            <div key={item.id} className='homepage-items--card-item'>
+            <NavLink to={`/products/${item.id}`} key={item.id}><div className='homepage-items--card-item'>
                 <Box className='homepage-items--card-container' backgroundColor='#f5f5f5' >
                     <div className='homepage-items--card-image-container'>
                         <img className='homepage-items--card-img' src={item.image} alt={item.name} />       
@@ -42,7 +43,7 @@ const FeatureItems = () => {
                     <p>{item.name}</p>
                     <p>${item.price}</p>
                 </div>
-            </div>
+            </div></NavLink>
             ))}
         </div>
     </div>

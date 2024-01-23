@@ -7,6 +7,8 @@ import lights from '../../assets/Images/Lights.jpeg';
 import furniture from '../../assets/Images/Furniture.jpeg';
 import FeatureItems from '../../components/FeatureItems/FeatureItems';
 import About from '../../components/About/About';
+import { NavLink} from 'react-router-dom';
+
 
 const Homepage = () => {
   return (
@@ -19,32 +21,32 @@ const Homepage = () => {
         <div className='homepage-hero-contents'>  
           <p className='homepage-hero__header-text'>Elevate Your Space with Unique Finds</p>
           <p className='homepage-hero__subheader-text'>Easy,fun shopping</p>
-          <button className='homepage-hero__btn'>Shop Now</button>   
+          <NavLink to='/products'><button className='homepage-hero__btn'>Shop Now</button></NavLink> 
         </div>  
       </div>
 
       <div className='homepage-sorts'>
         <div className='homepage-sorts--grid'>
-          <div className='homepage-sorts--grid-one'> {/** HomeDecor */}
+          <NavLink to='/products/HomeDecor'><div className='homepage-sorts--grid-one'> {/** HomeDecor */}
             <div className='homepage-sorts--grid-overlay'></div>
             <img className='' src={homeDecor} alt="homeDecor" />
             <p className='homepage-sorts--grid-name'>HomeDecor</p>
-          </div>
-          <div className='homepage-sorts--grid-two'> {/** Kitchen */}
+          </div></NavLink>
+          <NavLink to='/products/Kitchen'><div className='homepage-sorts--grid-two'> {/** Kitchen */}
             <div className='homepage-sorts--grid-overlay'></div>
             <img className='' src={kitchen} alt="kitchen" />
             <p className='homepage-sorts--grid-name'>Kitchen</p>
-          </div>
-          <div className='homepage-sorts--grid-three'> {/** Lights */}
+          </div></NavLink>
+          <NavLink to='/products/Lights'><div className='homepage-sorts--grid-three'> {/** Lights */}
             <div className='homepage-sorts--grid-overlay'></div>
             <img className='' src={lights} alt="lights" />
             <p className='homepage-sorts--grid-name'>Lights</p>
-          </div>
-          <div className='homepage-sorts--grid-four'> {/** Furniture */}
+          </div></NavLink>
+          <NavLink to='/products/Furniture'><div className='homepage-sorts--grid-four'> {/** Furniture */}
             <div className='homepage-sorts--grid-overlay'></div>
             <img className='' src={furniture} alt="furniture" />
             <p className='homepage-sorts--grid-name'>Furniture</p>
-          </div>
+          </div></NavLink>
         </div>
       </div>
 
