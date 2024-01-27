@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../Navbar/Navbar.scss";
 import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/Logo/Logo for capstone.jpg'
@@ -15,9 +15,11 @@ import {
     MenuOptionGroup,
     MenuDivider,
   } from '@chakra-ui/react'
+import Cart from '../Cart/Cart';
 
 const Navbar = () => {
     const navigate = useNavigate();
+    const [open, setOpen] = useState(false);
 
     const clickAboutHandler = () => {
         navigate('/about')
@@ -31,7 +33,7 @@ const Navbar = () => {
                 <NavLink to='/products'><span>Shop</span></NavLink>
                 <span onClick={clickAboutHandler}>About</span>
                 <NavLink to='/contact'><span>Contact</span></NavLink>
-                <div className='Navbar-menu--cartIcon-wrapper'>
+                <div className='Navbar-menu--cartIcon-wrapper' onClick={() => setOpen(!open)}>
                     <img className="Navbar-menu--cartIcon-largeScreen" src={cartIcon} alt="cart-icon" /> 
                     <span>0</span>   
                 </div>
@@ -39,7 +41,7 @@ const Navbar = () => {
             </div>
 
             <div className='Navbar-menu'>
-                <div className='Navbar-menu--cartIcon-wrapper'>
+                <div className='Navbar-menu--cartIcon-wrapper' onClick={() => setOpen(!open)}>
                     <img className="Navbar-menu--cartIcon-smallScreen" src={cartIcon} alt="cart-icon" />    
                     <span>0</span>
                 </div>
@@ -70,7 +72,7 @@ const Navbar = () => {
                 </Menu>
             </div>
         </div>
-        
+        {open && <Cart/>}
     </div>
   )
 }

@@ -1,0 +1,11 @@
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/font' as *;
+
+.cart {
+    position: absolute;
+    right:1rem;
+    top:9rem;
+    z-index:999;
+    background-color: white;
+    // padding:
+}

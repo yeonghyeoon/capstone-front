@@ -4,7 +4,9 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Button, ButtonGroup, VStack, Textarea } from '@chakra-ui/react'
 import { LoremIpsum } from 'react-lorem-ipsum';
-import { DeleteIcon, EditIcon } from '@chakra-ui/icons'
+// import { DeleteIcon, EditIcon } from '@chakra-ui/icons'
+import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
+import EditIcon from '../../assets/Icons/edit-24px.svg';
 
 const SingleItem = () => {
     const { id } = useParams();
@@ -13,6 +15,7 @@ const SingleItem = () => {
     const [singleItem, setSingleItem] = useState({comments: []});
     const [quantity, setQuantity] = useState(1);
     const [newComment, setNewComment] = useState(false);
+    const [mainImage, setMainImage] = useState(''); 
     const commentRef = useRef();
 
     const increase = () => {
@@ -24,18 +27,15 @@ const SingleItem = () => {
         if (quantity >1) {
             setQuantity(quantity-1);
         }
-
     }
 
     const addCommentHandler = (e) => {
         e.preventDefault();
-
         const comment = commentRef.current.value
         // console.log(commentRef.current.value)
         if(!comment.trim()) {
             return;
         }
-
         const newComments = {
             comment
         }
@@ -45,13 +45,6 @@ const SingleItem = () => {
                 setSingleItem(prev => {
                     return {...prev, comments:[...prev.comments, response.data]};
                 })
-
-                // const newCommentData = response.data
-                // const updatedSingleItem = {...singleItem}
-
-                // updatedSingleItem.comments.push(newCommentData)
-                // setSingleItem(updatedSingleItem)
-
                 commentRef.current.value = '';
                 setNewComment(true);
 
@@ -59,8 +52,30 @@ const SingleItem = () => {
             .catch((error) => {
                 console.log(error)
             })
-       
+        }
+    const editCommentHandler = (commentId) => {
+        axios.patch(`${URL}/products/${id}/comments/${commentId}`, {comment: 'updated comment'})
+            .then((response) => {
+                console.log(response.data)
+            })
+            .catch((error) => {
+                console.log("error")
+            })
     }
+    const removeCommentHandler = (commentId) => {
+        axios.delete(`${URL}/products/${id}/comments/${commentId}`)
+            .then((response) => {
+                console.log(response.data)
+                setSingleItem(prev => {
+                    const deletedComments = prev.comments.filter(comment => comment.id !== commentId);
+                    return {...prev, comments: deletedComments};
+                })
+            })
+            .catch((error) => {
+                console.log("error")
+            })
+    }
+
     useEffect(() => {
             console.log("Id", id);
             const getData = async () => {
@@ -69,33 +84,33 @@ const SingleItem = () => {
                     const updatedSingleItem = {
                             ...response.data, comments: response.data.comments || []
                         }
-
                         setSingleItem(updatedSingleItem)
                         console.log(updatedSingleItem)
-
-                        // setSingleItem(response.data)
-                        // console.log(response.data)    
+                        setMainImage(updatedSingleItem.image)  
                 } catch(error) {
                     console.log("Error",error)
                 } finally {
                     setNewComment(false);
                 }
             }
-            
             getData();
-
         }, [id, newComment])
+
+    const imageChangeHandler = (image) => {
+            console.log("changing image to", image);
+            setMainImage(image);
+        }
 
   return (
     <div className='singleItem'>
         <div className='singleItem-title'>{singleItem.name}</div>
         <div className='singleItem-imgContainer'>
-            <img className='singleItem-img' src={singleItem.image} alt={singleItem.name}/>    
+            <img className='singleItem-img' src={mainImage} alt={singleItem.name} onMouseOver={() => imageChangeHandler(singleItem.image)} />    
         </div>
 
         <div className='singleItem-reference'>
-            <img className='singleItem-reference--img' src={singleItem.image} alt={singleItem.name} />
-            <img className='singleItem-reference--img' src={singleItem.referenceImage} alt={singleItem.name} />
+            <img className='singleItem-reference--img' src={singleItem.image} alt={singleItem.name} onMouseOver={() => imageChangeHandler(singleItem.image)} />
+            <img className='singleItem-reference--img' src={singleItem.referenceImage} alt={singleItem.name} onMouseOver={() => imageChangeHandler(singleItem.referenceImage)} />
         </div>
         
         <div className='singleItem-info'>
@@ -133,8 +148,10 @@ const SingleItem = () => {
                     <div key={comment.id} className='singleItem-info--reviews--Detail'>
                         <span>{comment.comment || 'No comment data'}</span>
                         <div className='singleItem-info--reviews-icons'>
-                            <EditIcon />
-                            <DeleteIcon />    
+                            {/* <EditIcon /> */}
+                            {/* <DeleteIcon /> */}
+                            <img src={DeleteIcon} alt='delete-icon' onClick={() => removeCommentHandler(comment.id)} />
+                            <img src={EditIcon} alt='edit-icon' onClick={() => editCommentHandler(comment.id)} />
                         </div>
                         
                     </div>
