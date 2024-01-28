@@ -52,6 +52,7 @@
         &--detail {
             background-color: #f4f4f4;
             margin-top: 3rem;
+            margin-bottom: 2rem;
         }
         &--reviews {
             &-icons {
@@ -84,5 +85,9 @@
                 align-items: center;
             }
         }
+    }
+    &-description {
+        padding: 1rem;
+        line-height: 2rem;
     }
 }

@@ -48,6 +48,7 @@
 .singleItem-info--detail {
   background-color: #f4f4f4;
   margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 .singleItem-info--reviews-icons {
   display: flex;
@@ -76,4 +77,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.singleItem-description {
+  padding: 1rem;
+  line-height: 2rem;
 }/*# sourceMappingURL=SingleItem.css.map */

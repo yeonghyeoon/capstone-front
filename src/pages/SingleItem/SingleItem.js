@@ -7,6 +7,8 @@ import { LoremIpsum } from 'react-lorem-ipsum';
 // import { DeleteIcon, EditIcon } from '@chakra-ui/icons'
 import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import EditIcon from '../../assets/Icons/edit-24px.svg';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Redux/cartReducer';
 
 const SingleItem = () => {
     const { id } = useParams();
@@ -17,6 +19,7 @@ const SingleItem = () => {
     const [newComment, setNewComment] = useState(false);
     const [mainImage, setMainImage] = useState(''); 
     const commentRef = useRef();
+    const dispatch = useDispatch();
 
     const increase = () => {
         console.log("quantity increased")
@@ -57,6 +60,16 @@ const SingleItem = () => {
         axios.patch(`${URL}/products/${id}/comments/${commentId}`, {comment: 'updated comment'})
             .then((response) => {
                 console.log(response.data)
+                setSingleItem(prev => {
+                    const editedComments = prev.comments.map(comment => {
+                        if(comment.id === commentId) {
+                            return {...comment, comment:"response.data"}
+                        }
+                        return comment;
+                        })
+                    return {...prev, comments: editedComments};
+                    
+                })
             })
             .catch((error) => {
                 console.log("error")
@@ -129,15 +142,21 @@ const SingleItem = () => {
             </div>
         
             <div className='singleItem-info--btn'>
-                <Button colorScheme='messenger' size='lg' className='singleItem-info--btn--add'>ADD TO CART</Button>
+                <Button colorScheme='messenger' size='lg' className='singleItem-info--btn--add' onClick={() => dispatch(addToCart({
+                    id: singleItem.id,
+                    name: singleItem.name,
+                    price: singleItem.price,
+                    img: singleItem.image,
+                    quantity,
+                }))}>ADD TO CART</Button>
                 <Button colorScheme='messenger' size='lg' className='singleItem-info--btn--buy'>BUY NOW</Button>    
             </div>
             
         </div>
         <div className='singleItem-info--detail'>
             <div className='singleItem-description'>
-                <div className='singleItem-size'>{singleItem.size}</div>
-                <div className='singleItem-weight'>{singleItem.weight}</div>
+                <div className='singleItem-size'>size: {singleItem.size}</div>
+                <div className='singleItem-weight'>weight: {singleItem.weight}</div>
             </div>
         </div>
 
