@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
 
         <div className='footer-Info'>
-            <div className='footer-Info-contact'>
+            <div className='footer-Info-contact' id='contact'>
                 <p>Elevate</p>
                 <p>Tel 123-456-7890</p>
                 <p>Email info@website.com</p>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import "../Navbar/Navbar.scss";
 import { NavLink, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/Logo/Logo for capstone.jpg'
@@ -16,26 +16,53 @@ import {
     MenuDivider,
   } from '@chakra-ui/react'
 import Cart from '../Cart/Cart';
+import { useSelector } from 'react-redux';
+
 
 const Navbar = () => {
     const navigate = useNavigate();
     const [open, setOpen] = useState(false);
-
-    const clickAboutHandler = () => {
-        navigate('/about')
+    const cartProducts = useSelector(state=>state.cart.products)
+    const aboutRef = useRef();
+    
+    useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash;
+            // const targetElement = document.querySelector(window.location.hash);
+            if (hash) {
+                const targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    console.log("Target element found")
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    console.log("Target not found")
+                }
+            }
+        };
+        window.addEventListener('hashchange', handleHashChange);
+        return () => {
+          window.removeEventListener('hashchange', handleHashChange);
+        };
+      }, []);
+    const scrollToAbout = () => {
+        window.location.hash = '#about';  // Update the URL with the hash
+    };
+    const scrollToContact = (sectionId) => {
+        window.location.hash = `#${sectionId}`;
     }
+    
   return (
     <div className='Navbar'>
         <div className='Navbar--container'>
-            <NavLink to='/'><img className='Navbar-logo' src={Logo} alt="elevate logo"/></NavLink>
+            <NavLink to='/' onClick={() => window.scrollTo(0,0)}><img className='Navbar-logo' src={Logo} alt="elevate logo"/></NavLink>
             <div className='Navbar-links'>
                 <NavLink to='/'><span>Home</span></NavLink>
                 <NavLink to='/products'><span>Shop</span></NavLink>
-                <span onClick={clickAboutHandler}>About</span>
-                <NavLink to='/contact'><span>Contact</span></NavLink>
+                <span onClick={scrollToAbout}>About</span>
+                <NavLink to='/contact' onClick={() => scrollToContact('contact')}><span>Contact</span></NavLink>
                 <div className='Navbar-menu--cartIcon-wrapper' onClick={() => setOpen(!open)}>
                     <img className="Navbar-menu--cartIcon-largeScreen" src={cartIcon} alt="cart-icon" /> 
-                    <span>0</span>   
+                    <span>{cartProducts.length}</span>   
                 </div>
                
             </div>
@@ -43,7 +70,7 @@ const Navbar = () => {
             <div className='Navbar-menu'>
                 <div className='Navbar-menu--cartIcon-wrapper' onClick={() => setOpen(!open)}>
                     <img className="Navbar-menu--cartIcon-smallScreen" src={cartIcon} alt="cart-icon" />    
-                    <span>0</span>
+                    <span>{cartProducts.length}</span>
                 </div>
                 
                 <Menu>
@@ -72,7 +99,7 @@ const Navbar = () => {
                 </Menu>
             </div>
         </div>
-        {open && <Cart/>}
+        {open && <Cart open={open} onClose={() => setOpen(false)}/>}
     </div>
   )
 }

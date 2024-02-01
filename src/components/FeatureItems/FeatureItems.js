@@ -32,7 +32,7 @@ const FeatureItems = () => {
     <div className='homepage-items--card'>
         <div className='homepage-items--card-grid'>
             {filteredItems.map((item) => (
-            <NavLink to={`/products/${item.id}`} key={item.id}><div className='homepage-items--card-item'>
+            <NavLink to={`/products/${item.id}`} key={item.id} ><div className='homepage-items--card-item'>
                 <Box className='homepage-items--card-container' backgroundColor='#f5f5f5' >
                     <div className='homepage-items--card-image-container'>
                         <img className='homepage-items--card-img' src={item.image} alt={item.name} />       

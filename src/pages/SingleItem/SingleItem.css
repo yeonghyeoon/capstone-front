@@ -57,6 +57,10 @@
 .singleItem-info--reviews--Detail {
   display: flex;
   justify-content: space-between;
+  transition: opacity 0.3s ease-in-out;
+}
+.singleItem-info--reviews--Detail:hover {
+  opacity: 0.8;
 }
 .singleItem-quantity {
   display: flex;

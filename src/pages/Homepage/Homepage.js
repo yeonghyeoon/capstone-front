@@ -8,9 +8,16 @@ import furniture from '../../assets/Images/Furniture.jpeg';
 import FeatureItems from '../../components/FeatureItems/FeatureItems';
 import About from '../../components/About/About';
 import { NavLink} from 'react-router-dom';
-
+import { useState, useRef } from 'react';
 
 const Homepage = () => {
+  const [category, setCategory] = useState('All');
+  const aboutRef = useRef();
+  // const renderForAllOnly = false; 
+  const categoryHandler = (event) => {
+    setCategory(event)
+  }
+  
   return (
     <div className='homepage-container'>
       <div className='homepage-hero'>
@@ -27,22 +34,22 @@ const Homepage = () => {
 
       <div className='homepage-sorts'>
         <div className='homepage-sorts--grid'>
-          <NavLink to='/products/HomeDecor'><div className='homepage-sorts--grid-one'> {/** HomeDecor */}
+          <NavLink to='/products/HomeDecor' onClick={() => categoryHandler('HomeDecor')}><div className='homepage-sorts--grid-one'> {/** HomeDecor */}
             <div className='homepage-sorts--grid-overlay'></div>
             <img className='' src={homeDecor} alt="homeDecor" />
             <p className='homepage-sorts--grid-name'>HomeDecor</p>
           </div></NavLink>
-          <NavLink to='/products/Kitchen'><div className='homepage-sorts--grid-two'> {/** Kitchen */}
+          <NavLink to='/products/Kitchen' onClick={() => categoryHandler('Kitchen')}><div className='homepage-sorts--grid-two'> {/** Kitchen */}
             <div className='homepage-sorts--grid-overlay'></div>
             <img className='' src={kitchen} alt="kitchen" />
             <p className='homepage-sorts--grid-name'>Kitchen</p>
           </div></NavLink>
-          <NavLink to='/products/Lights'><div className='homepage-sorts--grid-three'> {/** Lights */}
+          <NavLink to='/products/Lights' onClick={() => categoryHandler('Lights')}><div className='homepage-sorts--grid-three'> {/** Lights */}
             <div className='homepage-sorts--grid-overlay'></div>
             <img className='' src={lights} alt="lights" />
             <p className='homepage-sorts--grid-name'>Lights</p>
           </div></NavLink>
-          <NavLink to='/products/Furniture'><div className='homepage-sorts--grid-four'> {/** Furniture */}
+          <NavLink to='/products/Furniture' onClick={() => categoryHandler('Furniture')}><div className='homepage-sorts--grid-four'> {/** Furniture */}
             <div className='homepage-sorts--grid-overlay'></div>
             <img className='' src={furniture} alt="furniture" />
             <p className='homepage-sorts--grid-name'>Furniture</p>
@@ -60,7 +67,7 @@ const Homepage = () => {
           
         {/* </div> */}
       </div>
-      <div id='about' className='homepage-about-section'>
+      <div id='about' ref={aboutRef} className='homepage-about-section'>
         <About />  
       </div>
         

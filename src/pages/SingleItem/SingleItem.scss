@@ -55,6 +55,13 @@
             margin-bottom: 2rem;
         }
         &--reviews {
+            // &-card {
+            //     transition: opacity 0.3s ease-in-out;
+            //     &:hover {
+            //         opacity: 0.8;
+            //     }
+            // }
+
             &-icons {
                 display: flex;
                 gap: 0.5rem;
@@ -62,6 +69,10 @@
             &--Detail {
                 display: flex;
                 justify-content: space-between;
+                transition: opacity 0.3s ease-in-out;
+                &:hover {
+                    opacity: 0.8;
+                }
             }
         }
         

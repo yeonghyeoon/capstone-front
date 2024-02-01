@@ -9,18 +9,22 @@ import Kitchen from '../../components/Shop-Category/Kitchen.js';
 import { NavLink} from 'react-router-dom';
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { ArrowBackIcon } from '@chakra-ui/icons'
+import { useParams } from 'react-router-dom';
 
 const ShopPage = () => {
+  const { category: initialCategory } = useParams();
   const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState('All');
+  const [category, setCategory] = useState(initialCategory || 'All');
   const URL = process.env.REACT_APP_API_URL;
   // const renderForAllOnly = false; 
 
-  const categoryHandler = (event) => {
-    setCategory(event)
+  const categoryHandler = (category) => {
+    setCategory(category)
   }
 
-  useEffect(() => {
+  const filteredProducts = category === 'All' ? products: products.filter(item => item.category === category);
+
+  useEffect(() => { 
     axios.get(`${URL}/products`)
       .then((response) => {
         // console.log(response.data)
@@ -31,34 +35,34 @@ const ShopPage = () => {
       //   setProducts(data)
       // })
       .catch((error) => console.log("Error", error));
-  }, [])
+  }, [category])
 
-  const renderCategoryComponent = () => {
-    switch (category) {
-      case 'Lights' :
-        return <Lights products={products} />;
-      case 'Furniture' :
-        return <Furniture products={products} />;
-      case 'HomeDecor' :
-        return <HomeDecor products={products} />;
-      case 'Kitchen' :
-        return <Kitchen products={products} />;
-      default:
-        return (
-        <div className='shopPage-items'>
-          {products.map((item) => (
-            <div key={item.id} className='shopPage-items--card'> 
-              <NavLink to={`/products/${item.id}`}><img className='shopPage-items--card-img' src={item.image} alt={item.name} />
-                  <div className='shopPage-items--card-text'>
-                      <p className='shopPage-items--card-text--name'>{item.name}</p>
-                      <p className='shopPage-items--card-text--price'>${item.price}</p>
-                  </div></NavLink>
-            </div>
-          ))}  
-        </div>
-        )
-    }
-  }
+  // const renderCategoryComponent = () => {
+  //   switch (category) {
+  //     case 'Lights' :
+  //       return <Lights products={products} />;
+  //     case 'Furniture' :
+  //       return <Furniture products={products} />;
+  //     case 'HomeDecor' :
+  //       return <HomeDecor products={products} />;
+  //     case 'Kitchen' :
+  //       return <Kitchen products={products} />;
+  //     default:
+  //       return (
+  //       <div className='shopPage-items'>
+  //         {products.map((item) => (
+  //           <div key={item.id} className='shopPage-items--card'> 
+  //             <NavLink to={`/products/${item.id}`}><img className='shopPage-items--card-img' src={item.image} alt={item.name} />
+  //                 <div className='shopPage-items--card-text'>
+  //                     <p className='shopPage-items--card-text--name'>{item.name}</p>
+  //                     <p className='shopPage-items--card-text--price'>${item.price}</p>
+  //                 </div></NavLink>
+  //           </div>
+  //         ))}  
+  //       </div>
+  //       )
+  //   }
+  // }
 
   return (
     <div className='shopPage-container'>
@@ -80,7 +84,18 @@ const ShopPage = () => {
       <div className='shopPage-items-container'>
         <div className='shopPage-items--grid'>
           
-          {renderCategoryComponent()}
+          {/* {renderCategoryComponent()} */}
+          <div className='shopPage-items'>
+          {filteredProducts.map((item) => (
+            <div key={item.id} className='shopPage-items--card'> 
+              <NavLink to={`/products/${item.id}`}><img className='shopPage-items--card-img' src={item.image} alt={item.name} />
+                  <div className='shopPage-items--card-text'>
+                      <p className='shopPage-items--card-text--name'>{item.name}</p>
+                      <p className='shopPage-items--card-text--price'>${item.price}</p>
+                  </div></NavLink>
+            </div>
+          ))}  
+        </div>
         </div>
       </div>
     </div>

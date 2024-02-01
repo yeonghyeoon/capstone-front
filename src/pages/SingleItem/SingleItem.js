@@ -21,6 +21,20 @@ const SingleItem = () => {
     const commentRef = useRef();
     const dispatch = useDispatch();
 
+    // useRef
+
+    // const handleScroll = (ref) => {
+    // window.scrollTo({
+    // top: ref.offsetTop,
+    // left: 0,
+    // behavior: "smooth",
+    // });
+    // };
+
+    // useEffect(() => {
+    //     window.scrollTo({top:0, left:0, behavior:"auto"})
+    // }, [])
+ 
     const increase = () => {
         console.log("quantity increased")
         setQuantity(quantity+1);
@@ -108,6 +122,10 @@ const SingleItem = () => {
             }
             getData();
         }, [id, newComment])
+    
+    // useEffect(() => {
+    //     window.scrollTo(0,0);
+    // })
 
     const imageChangeHandler = (image) => {
             console.log("changing image to", image);
@@ -165,7 +183,7 @@ const SingleItem = () => {
             <VStack spacing={4} align="stretch" className='singleItem-info--reviews'>
                 {singleItem.comments.map(comment => (
                     <div key={comment.id} className='singleItem-info--reviews--Detail'>
-                        <span>{comment.comment || 'No comment data'}</span>
+                        <span className='singleItem-info--reviews-card'>{comment.comment || 'No comment data'}</span>
                         <div className='singleItem-info--reviews-icons'>
                             {/* <EditIcon /> */}
                             {/* <DeleteIcon /> */}

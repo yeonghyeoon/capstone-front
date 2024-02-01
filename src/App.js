@@ -13,12 +13,14 @@ import Furniture from './components/Shop-Category/Furniture';
 import HomeDecor from './components/Shop-Category/HomeDecor';
 import Kitchen from './components/Shop-Category/Kitchen';
 import SingleItem from './pages/SingleItem/SingleItem';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <div className="App">
         <BrowserRouter>
+          <ScrollToTop />
           <Navbar/>
           <Routes>
             <Route path='/' element={<Homepage />}></Route>
@@ -30,8 +32,8 @@ function App() {
               
             </Route>
             <Route path='/products/:id' element={<SingleItem/>}></Route>
-            <Route path='/about' element={<AboutPage/>}></Route>  
-            <Route path='/contact' element={<ContactPage/>}></Route>
+            {/* <Route path='/about' element={<AboutPage/>}></Route>   */}
+            {/* <Route path='/contact' element={<ContactPage/>}></Route> */}
             <Route path='*' element={<Homepage/>}></Route>
           </Routes>
           <Footer />

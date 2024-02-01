@@ -3,10 +3,12 @@
 
 .Navbar {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     box-shadow: 0 4px 5px -5px rgba(0,0,0,.23);
     background-color: #ffffff;
-    z-index: 100;
+    z-index: 1000;
     &-logo {
         width: 9rem;
         height: auto;
@@ -67,6 +69,7 @@
     }
     &-links {
         display: none;
+        cursor: pointer;
         @include tablet {
             display: flex;
             gap: 2rem;
