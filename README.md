@@ -9,10 +9,10 @@ My e-commerce website is designed to provide a convenient and enjoyable shopping
 *Redux
 *Chakra UI
 
-##Features 
+## Features 
 »
 
-##Screenshots of the Project
+## Screenshots of the Project
 
 Homepage
 ![localhost_3001_](https://github.com/yeonghyeoon/capstone-front/assets/102931368/0c7fb5cc-b5ca-418c-a923-fee89abd9435)
