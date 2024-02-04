@@ -4,17 +4,17 @@ This project aims to create a seamless and user-friendly online platform where c
 My e-commerce website is designed to provide a convenient and enjoyable shopping experience.
 
 ## Built with:
-*React JS
-*Express
-*Redux
+*React JS\
+*Express\
+*Redux\
 *Chakra UI
 
 ## Features 
-» Filtering items by categories 
-» Switching an item image mousing over to main image
-» Shuffling itmes and get random items under You May Also Like section when refreshing the web page
-» Posting reviews / Deleting and changing the number of reviews as posting or deleting
-» Adding items into the cart / Being able to delete a specific item or reset the whole thing in the cart(deleting all)
+» Filtering items by categories\
+» Switching an item image mousing over to main image\
+» Shuffling itmes and get random items under You May Also Like section when refreshing the web page\
+» Posting reviews / Deleting and changing the number of reviews as posting or deleting\
+» Adding items into the cart / Being able to delete a specific item or reset the whole thing in the cart(deleting all)\
 » Showing the total price for users
 
 ## Screenshots of the Project 📸
@@ -32,7 +32,7 @@ My e-commerce website is designed to provide a convenient and enjoyable shopping
 ![localhost_3001_ (3)](https://github.com/yeonghyeoon/capstone-front/assets/102931368/b95bf18e-2c13-44d9-a391-0bea19452cd3)
 
 ## Lessons to take
-» Managing time
+» Managing time\
 » Making solid plans for how to structure things for cleaner code
 
 ## Next Step
