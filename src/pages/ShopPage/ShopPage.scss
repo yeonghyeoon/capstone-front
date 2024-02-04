@@ -1,0 +1,80 @@
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/font' as *;
+@use "../../styles/partials/variables" as *;
+
+.shopPage {
+
+    &-container {
+        padding-top: 9rem;  
+    }
+    &-header {
+
+        &__title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 2rem 1rem;
+            & h2 {
+                margin: 0 auto;
+            }
+        }
+        &__btn {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            & button {
+                background-color: #ff6600;
+                color: #ffffff;
+            }
+        }
+    }
+    &-filter{
+        &-none {
+            display: none;
+        }
+    }
+    &-items {
+        width: 60%;
+        margin: 0 auto;
+        display: grid;
+        gap: 2rem;
+        @include tablet {
+            display:grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            justify-content: center;
+        }
+        &--card{
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            
+            &-img {
+                width: 100%;
+                height: auto;
+                border-radius: 4px 4px 0 0;
+            }
+            &-text {
+                padding: 1rem;
+                text-align: center;
+                &--name {
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+                &--price {
+                    font-weight: 600;
+                }
+            }    
+        }
+        &--grid {
+            grid-template-columns: 1fr;
+            padding-top: 3rem;
+        }
+    }
+}

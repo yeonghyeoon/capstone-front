@@ -1,0 +1,78 @@
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/font' as *;
+
+.Navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 5px -5px rgba(0,0,0,.23);
+    background-color: #ffffff;
+    z-index: 1000;
+    &-logo {
+        width: 9rem;
+        height: auto;
+    }
+    &--container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0 1rem;
+        height: 9rem;
+        @include tablet {
+            padding: 0 2rem;
+        }
+    }
+    &-menu {
+        display: flex;
+        gap: 2rem;
+        &--cartIcon {
+            // width: 25px;
+            // height: auto;
+            &-wrapper {
+                position: relative;
+                & span {
+                    font-size: 12px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: #2879fe;
+                    color: white;
+                    position: absolute;
+                    right: -10px;
+                    top: -10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            &-smallScreen {
+                width: 25px;
+                height: auto;
+                @include tablet {
+                    display: none;
+                }
+            }
+            &-largeScreen {
+                width: 25px;
+                height: auto;
+                display: none;
+                @include tablet {
+                    display: block;
+                }
+            }
+        }
+        @include tablet {
+            display: none;
+        }
+    }
+    &-links {
+        display: none;
+        cursor: pointer;
+        @include tablet {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+}

@@ -1,0 +1,136 @@
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/font' as *;
+@use "../../styles/partials/variables" as *;
+
+.singleItem {
+    padding: 11rem 2rem 0 2rem;
+    &-title {
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: 600;
+        padding-bottom: 3rem;
+    }
+    &-img {
+        width: 50%;
+        margin: 0 auto;
+        
+    }
+    &-reference {
+        display: flex;
+        justify-content: center;
+        gap: 1.2rem;
+        padding-top: 5rem;
+        &--img {
+            width: 20%;
+            &:hover {
+                outline: 1px solid rgba(0, 0, 0, 0.3);
+                box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.18);
+            }
+        }
+    }
+    &-info {
+        padding: 3rem 1rem;
+        background-color: #f4f4f4;
+        margin-top: 2rem;
+        &--btn {
+            display: none;
+            @include tablet {
+                display:block;
+                gap: 2rem;
+                display: flex;
+                width: 100%;
+                &--add {
+                    width: 50%;
+                }
+                &--buy {
+                    width: 50%;
+                }    
+            }
+            
+        }
+        &--text {
+            font-size: 1.25rem;
+            font-weight: 400;
+            padding-bottom: 3rem;
+        }
+        &--detail {
+            background-color: #f4f4f4;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+        }
+        &--reviews {
+            &-input {
+                margin-bottom: 1rem;
+            }
+            &--title {
+                margin-bottom: 1rem;
+                padding-left: 16px;
+            }
+            &-icons {
+                display: flex;
+                gap: 0.5rem;
+            }
+            &--Detail {
+                display: flex;
+                justify-content: space-between;
+                transition: opacity 0.3s ease-in-out;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+            &-number {
+                font-size: 0.8rem;
+            }
+        }
+        
+    }
+    &-quantity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include tablet {
+            padding-bottom: 2rem;
+        }
+        & button {
+            background-color: #ffffff;
+            width: 40px;
+            height: 40px;
+        }
+        &--btn {
+            display: flex;
+            & p {
+                width: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    &-description {
+        padding: 1rem;
+        line-height: 2rem;
+        &__head {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 50px;
+            margin-bottom: 1rem;
+        }
+        &__subtitle {
+            font-weight: 600;
+        }
+    }
+}
+.smScreen-addToCart {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 2rem;
+    width: 90%;
+    @include tablet {
+        display: none;
+    }
+    &--btn {
+        width: 100%;
+    }
+}

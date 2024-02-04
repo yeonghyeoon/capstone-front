@@ -1,0 +1,36 @@
+.mayLike-title {
+  margin-top: 2rem;
+  padding-left: 16px;
+}
+.mayLike-items {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media screen and (min-width: 768px) {
+  .mayLike-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .mayLike-items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.mayLike-items--card {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.mayLike-items--card img {
+  width: 100%;
+  height: auto;
+}
+.mayLike-items--card p {
+  margin: 8px 0;
+}
+.mayLike-items--text {
+  text-align: center;
+}
+.mayLike-items--text-price {
+  font-weight: 600;
+}/*# sourceMappingURL=MayLike.css.map */

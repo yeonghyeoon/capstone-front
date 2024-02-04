@@ -1,0 +1,90 @@
+.footer {
+  background-color: #323232;
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  color: #ffffff;
+  padding: 2rem 1rem 5rem 1rem;
+  line-height: 1.4rem;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 2rem 4rem 3rem 4rem;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer-subscribe {
+    width: 54%;
+    text-align: left;
+  }
+}
+.footer-subscribe p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .footer-subscribe p {
+    text-align: left;
+  }
+}
+.footer-subscribe-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .footer-subscribe-container {
+    justify-content: unset;
+  }
+}
+.footer-subscribe-input {
+  border: 2px solid #ffffff;
+  background-color: #323232;
+  width: 70%;
+  height: 2rem;
+  padding-left: 0.5rem;
+}
+.footer-subscribe-input::-moz-placeholder {
+  color: #ffffff;
+}
+.footer-subscribe-input::placeholder {
+  color: #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .footer-subscribe-input {
+    height: 2rem;
+  }
+}
+.footer-subscribe-btn {
+  background-color: #ffffff;
+  color: black;
+  width: 3rem;
+}
+.footer-Info {
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer-Info {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    width: 60%;
+    gap: 2rem;
+    margin-top: 0;
+  }
+}
+.footer-contactInfo-icons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 3px;
+}
+.footer-contactInfo-icons--xLogo {
+  height: 23px;
+  width: auto;
+}/*# sourceMappingURL=Footer.css.map */
