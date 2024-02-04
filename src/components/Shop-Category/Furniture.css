@@ -4,7 +4,7 @@
   display: grid;
   gap: 2rem;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
   .furniture-items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

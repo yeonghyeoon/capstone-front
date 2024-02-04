@@ -13,7 +13,6 @@ import { useState, useRef } from 'react';
 const Homepage = () => {
   const [category, setCategory] = useState('All');
   const aboutRef = useRef();
-  // const renderForAllOnly = false; 
   const categoryHandler = (event) => {
     setCategory(event)
   }
@@ -22,9 +21,7 @@ const Homepage = () => {
     <div className='homepage-container'>
       <div className='homepage-hero'>
         <div className='homepage-hero-overlay'></div>
-
         <img className='homepage-hero-img' src={hero} alt='homeDecorImage'/>
-
         <div className='homepage-hero-contents'>  
           <p className='homepage-hero__header-text'>Elevate Your Space with Unique Finds</p>
           <p className='homepage-hero__subheader-text'>Easy,fun shopping</p>
@@ -61,11 +58,6 @@ const Homepage = () => {
         <h2 className='homepage-items-head'>Featured Items</h2>
         
         <FeatureItems />
-
-        {/** Mapping get card data from api. not all the products just some of them ex)item.name, item.price, item.image */}
-        {/* <div className='homepage-items--card'>   */}
-          
-        {/* </div> */}
       </div>
       <div id='about' ref={aboutRef} className='homepage-about-section'>
         <About />  

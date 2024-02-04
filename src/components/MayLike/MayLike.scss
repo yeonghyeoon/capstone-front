@@ -1,0 +1,38 @@
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/font' as *;
+@use "../../styles/partials/variables" as *;
+
+.mayLike {
+    &-title {
+        margin-top: 2rem;
+        padding-left: 16px;
+    }
+    &-items {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include desktop {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        &--card {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            & img {
+                width: 100%;
+                height: auto;
+            }
+            & p {
+                margin: 8px 0;
+            }
+        } 
+        &--text {
+            text-align: center;
+            &-price {
+                font-weight: 600;
+            }
+        }
+    }
+}

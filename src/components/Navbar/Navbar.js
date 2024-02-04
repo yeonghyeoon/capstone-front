@@ -1,38 +1,28 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import "../Navbar/Navbar.scss";
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from '../../assets/Logo/Logo for capstone.jpg'
 import cartIcon from '../../assets/Icons/shopping-cart.png'
 import { IconButton,} from '@chakra-ui/react'
-import { PhoneIcon, AddIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import {
     Menu,
     MenuButton,
     MenuList,
     MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
   } from '@chakra-ui/react'
 import Cart from '../Cart/Cart';
 import { useSelector } from 'react-redux';
 
-
 const Navbar = () => {
-    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
-    const cartProducts = useSelector(state=>state.cart.products)
-    const aboutRef = useRef();
-    
+    const cartProducts = useSelector(state=>state.cart.products)    
     useEffect(() => {
         const handleHashChange = () => {
             const hash = window.location.hash;
-            // const targetElement = document.querySelector(window.location.hash);
             if (hash) {
                 const targetElement = document.querySelector(hash);
                 if (targetElement) {
-                    console.log("Target element found")
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                 } else {
                     console.log("Target not found")

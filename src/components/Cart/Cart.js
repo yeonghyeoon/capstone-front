@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './Cart.scss';
-import { LoremIpsum } from 'react-lorem-ipsum';
 import axios from 'axios';
 import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import { Button, Heading } from '@chakra-ui/react';
@@ -13,7 +12,6 @@ const Cart = ({ open, onClose }) => {
     const [products, setProducts] = useState([]);
     const cartProducts = useSelector(state=>state.cart.products)
     const dispatch = useDispatch();
-
     const totalPrice = () => {
         let total= 0;
         cartProducts.forEach((item) => (total += item.quantity * item.price))
@@ -34,8 +32,6 @@ const Cart = ({ open, onClose }) => {
                 console.log("error")
             })
     }
-
-    const itemsForTesting = products.filter(item => item.id <= 2);
     
   return (
     <div className={`cart ${open ? 'open' : ''}`}>
@@ -45,7 +41,6 @@ const Cart = ({ open, onClose }) => {
                 <img className='cart-item__img' src={item.img} alt={item.name} />
                 <div className='cart-item__details'>
                     <Heading as='h1' size='3x1' color='grey'>{item.name}</Heading>
-                    {/* <LoremIpsum p={1} avgWordsPerSentence={0}/> */}
                     <p className='cart-item__details--name'>{item.name}</p>
                     <div className='cart-item--price'>{item.quantity} x ${item.price}</div>
                 </div>

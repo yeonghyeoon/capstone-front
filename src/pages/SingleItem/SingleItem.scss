@@ -32,17 +32,21 @@
         padding: 3rem 1rem;
         background-color: #f4f4f4;
         margin-top: 2rem;
-        // background-color: #e0e0e0;
         &--btn {
-            gap: 2rem;
-            display: flex;
-            width: 100%;
-            &--add {
-                width: 50%;
+            display: none;
+            @include tablet {
+                display:block;
+                gap: 2rem;
+                display: flex;
+                width: 100%;
+                &--add {
+                    width: 50%;
+                }
+                &--buy {
+                    width: 50%;
+                }    
             }
-            &--buy {
-                width: 50%;
-            }
+            
         }
         &--text {
             font-size: 1.25rem;
@@ -55,13 +59,13 @@
             margin-bottom: 2rem;
         }
         &--reviews {
-            // &-card {
-            //     transition: opacity 0.3s ease-in-out;
-            //     &:hover {
-            //         opacity: 0.8;
-            //     }
-            // }
-
+            &-input {
+                margin-bottom: 1rem;
+            }
+            &--title {
+                margin-bottom: 1rem;
+                padding-left: 16px;
+            }
             &-icons {
                 display: flex;
                 gap: 0.5rem;
@@ -74,6 +78,9 @@
                     opacity: 0.8;
                 }
             }
+            &-number {
+                font-size: 0.8rem;
+            }
         }
         
     }
@@ -81,7 +88,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-bottom: 2rem;
+        @include tablet {
+            padding-bottom: 2rem;
+        }
         & button {
             background-color: #ffffff;
             width: 40px;
@@ -100,5 +109,28 @@
     &-description {
         padding: 1rem;
         line-height: 2rem;
+        &__head {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 50px;
+            margin-bottom: 1rem;
+        }
+        &__subtitle {
+            font-weight: 600;
+        }
+    }
+}
+.smScreen-addToCart {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 2rem;
+    width: 90%;
+    @include tablet {
+        display: none;
+    }
+    &--btn {
+        width: 100%;
     }
 }

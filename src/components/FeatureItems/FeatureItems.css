@@ -1,7 +1,7 @@
 .homepage-items--card {
   padding-top: 1rem;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
   .homepage-items--card {
     padding-top: 2rem;
   }
@@ -11,7 +11,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
   .homepage-items--card-grid {
     grid-template-columns: repeat(3, 1fr);
   }

@@ -30,15 +30,21 @@
   margin-top: 2rem;
 }
 .singleItem-info--btn {
-  gap: 2rem;
-  display: flex;
-  width: 100%;
+  display: none;
 }
-.singleItem-info--btn--add {
-  width: 50%;
-}
-.singleItem-info--btn--buy {
-  width: 50%;
+@media screen and (min-width: 768px) {
+  .singleItem-info--btn {
+    display: block;
+    gap: 2rem;
+    display: flex;
+    width: 100%;
+  }
+  .singleItem-info--btn--add {
+    width: 50%;
+  }
+  .singleItem-info--btn--buy {
+    width: 50%;
+  }
 }
 .singleItem-info--text {
   font-size: 1.25rem;
@@ -49,6 +55,13 @@
   background-color: #f4f4f4;
   margin-top: 3rem;
   margin-bottom: 2rem;
+}
+.singleItem-info--reviews-input {
+  margin-bottom: 1rem;
+}
+.singleItem-info--reviews--title {
+  margin-bottom: 1rem;
+  padding-left: 16px;
 }
 .singleItem-info--reviews-icons {
   display: flex;
@@ -62,11 +75,18 @@
 .singleItem-info--reviews--Detail:hover {
   opacity: 0.8;
 }
+.singleItem-info--reviews-number {
+  font-size: 0.8rem;
+}
 .singleItem-quantity {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .singleItem-quantity {
+    padding-bottom: 2rem;
+  }
 }
 .singleItem-quantity button {
   background-color: #ffffff;
@@ -85,4 +105,30 @@
 .singleItem-description {
   padding: 1rem;
   line-height: 2rem;
+}
+.singleItem-description__head {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 50px;
+  margin-bottom: 1rem;
+}
+.singleItem-description__subtitle {
+  font-weight: 600;
+}
+
+.smScreen-addToCart {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 2rem;
+  width: 90%;
+}
+@media screen and (min-width: 768px) {
+  .smScreen-addToCart {
+    display: none;
+  }
+}
+.smScreen-addToCart--btn {
+  width: 100%;
 }/*# sourceMappingURL=SingleItem.css.map */
