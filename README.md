@@ -12,7 +12,7 @@ My e-commerce website is designed to provide a convenient and enjoyable shopping
 ## Features 
 » Filtering items by categories 
 » Switching an item image mousing over to main image
-» Suffle itmes and get random items under You May Also Like section when refreshing the web page
+» Shuffling itmes and get random items under You May Also Like section when refreshing the web page
 » Posting reviews / Deleting and changing the number of reviews as posting or deleting
 » Adding items into the cart / Being able to delete a specific item or reset the whole thing in the cart(deleting all)
 » Showing the total price for users
@@ -22,7 +22,7 @@ My e-commerce website is designed to provide a convenient and enjoyable shopping
 # Homepage🏠
 ![localhost_3001_](https://github.com/yeonghyeoon/capstone-front/assets/102931368/0c7fb5cc-b5ca-418c-a923-fee89abd9435)
 
-# Shoppage🎁
+# ShopPage🎁
 ![localhost_3001_ (1)](https://github.com/yeonghyeoon/capstone-front/assets/102931368/c839cf01-7d82-4595-998f-4c52f32ba0e7)
 
 # ItemPage🛍️
